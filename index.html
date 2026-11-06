@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SOYAIB OFFICIAL diary</title><meta name="theme-color" content="#0b1f3a"><meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#eef1f6;--card:#fff;--ink:#0f1b2d;--mute:#64748b;--line:#dde3ec;--pri:#0b1f3a;--pri2:#1e4fa3;--gold:#c9a227;--soft:#f3f6fb;--danger:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0a1220;--card:#121c2e;--ink:#e7edf7;--mute:#97a6bf;--line:#223250;--pri:#0a1830;--pri2:#5b8def;--gold:#e2b94a;--soft:#18263d;--danger:#f0857a}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;font-size:16px}
+header{background:linear-gradient(135deg,#0b1f3a,#16386b 60%,#1e4fa3);color:#fff;padding:20px 18px 16px;border-bottom:3px solid var(--gold)}
+.sub{font-size:13px;opacity:.85;margin-top:8px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{border:1px solid #ffffff44;background:#ffffff22;color:#fff;border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#f3d77a,#c9a227);color:#0b1f3a;font:800 26px/48px sans-serif;text-align:center;box-shadow:0 4px 14px #0007}
+.bn{font:800 21px/1.1 sans-serif;letter-spacing:1.5px}
+.bd{color:#f3d77a;font:600 15px sans-serif;letter-spacing:5px;margin-top:2px}
+main{max-width:760px;margin:0 auto;padding:14px}
+.nav{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.nav button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 14px;font-weight:600;font-size:15px;font-family:inherit;cursor:pointer}
+.nav .pg{flex:1;text-align:center;font-weight:700;font-size:18px;cursor:pointer;color:var(--pri2)}
+.hero{background:linear-gradient(135deg,var(--card),var(--soft));border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:14px;margin-bottom:12px}
+.hero b{font-size:22px;color:var(--pri2)}.hero div{color:var(--mute);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 2px 10px #0b1f3a14}
+.full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:6px}
+input,textarea,select{width:100%;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:9px;padding:10px;font-size:16px;font-family:inherit;outline:0}
+input:focus,textarea:focus,select:focus{border-color:var(--pri2)}
+textarea{min-height:70px;resize:vertical}
+.ph{display:flex;gap:6px;margin-bottom:8px}.ph button{border:0;background:none;color:var(--danger);font-size:20px;cursor:pointer;width:auto}
+.add{border:0;background:none;color:var(--pri2);font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;padding:4px 0}
+.fin{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fin input{text-align:center}
+.due{font-weight:700;color:var(--danger)}
+.save{width:100%;margin:14px 0 24px;background:linear-gradient(135deg,#0b1f3a,#1e4fa3);color:#fff;border:0;border-radius:12px;padding:15px;font-weight:700;font-size:17px;font-family:inherit;cursor:pointer;border-bottom:3px solid var(--gold);box-shadow:0 6px 16px #1e4fa355}
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;padding:16px;z-index:20}
+.modal.on{display:flex}
+.box{background:var(--card);border-radius:14px;padding:16px;width:100%;max-width:520px;max-height:85vh;overflow:auto}
+.box h3{margin:0 0 10px}
+.pgs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.pgs button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:8px;padding:9px 0;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer}
+.pgs button.f{background:var(--pri2);color:#fff;border-color:var(--pri2)}
+.yrs{display:flex;gap:6px;margin-bottom:10px}.yrs button,.mh button{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:9px;padding:8px 12px;font-weight:700;font-size:15px;cursor:pointer}.yrs button{flex:1}.yrs button.f{background:var(--pri2);color:#fff;border-color:var(--pri2)}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:17px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.cg i{font-style:normal;font-size:12px;color:var(--mute);font-weight:700;padding:4px 0}
+.cg button{aspect-ratio:1;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:9px;font-weight:600;font-size:14px;cursor:pointer;padding:0}.cg button.h{background:var(--pri2);color:#fff;border-color:var(--pri2)}.cg button.t{outline:2px solid var(--gold)}
+.foot{text-align:center;color:var(--mute);font-size:12px;padding:0 0 22px}
+.note{font-size:13px;color:var(--mute);margin:0 0 10px;line-height:1.5}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--pri);color:#fff;padding:10px 18px;border-radius:20px;display:none;z-index:30}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="logo">S</div><div><div class="bn">SOYAIB OFFICIAL</div><div class="bd">diary</div></div></div>
+<div class="sub" id="today"></div>
+<div class="bar">
+<button class="btn" onclick="openCal()">📅 ক্যালেন্ডার</button>
+<button class="btn" onclick="openIdx()">📖 সূচিপত্র</button>
+</div>
+</header>
+<main>
+<div class="nav"><button onclick="go(-1)">← আগে</button><div class="pg" id="pg" onclick="openIdx()"></div><button onclick="go(1)">পরে →</button></div>
+<div class="hero"><b id="hd">তারিখ</b><div id="wd">বার</div></div>
+<div class="grid">
+<div class="card"><label>তারিখ</label><input type="date" id="date"></div>
+<div class="card"><label>সময়</label><input id="time" placeholder="যেমন: রাত ৯.৩০ মি"></div>
+<div class="card full"><label>প্রোগ্রামের উদ্দেশ্য</label><input id="purpose"></div>
+<div class="card"><label>কর্তৃপক্ষ</label><input id="auth"></div>
+<div class="card"><label>যোগাযোগ</label><div id="phones"></div><button class="add" onclick="addPh('')">+ নতুন নাম্বার</button></div>
+<div class="card full"><label>ঠিকানা</label><textarea id="addr"></textarea></div>
+<div class="card full"><label>আর্থিক তথ্য (টাকা)</label>
+<div class="fin"><div><label>মোট</label><input type="number" inputmode="numeric" id="tot" oninput="calc()"></div>
+<div><label>পরিশোধ</label><input type="number" inputmode="numeric" id="paid" oninput="calc()"></div>
+<div><label>বাকি</label><input id="due" class="due" readonly></div></div></div>
+<div class="card"><label>মন্তব্য</label><textarea id="note"></textarea></div>
+<div class="card"><label>অবস্থা</label><select id="st"><option value="">---</option><option>নিশ্চিত</option><option>অপেক্ষমাণ</option><option>সম্পন্ন</option><option>বাতিল</option></select></div>
+</div>
+<button class="save" onclick="save()">এই পেজের ডাটা সেভ করুন</button>
+<div class="foot" id="foot">🔒 ডাটা অটো-সেভ হয় • © SOYAIB OFFICIAL</div></main>
+
+<div class="modal" id="idx" onclick="if(event.target===this)this.classList.remove('on')"><div class="box"><h3>সূচিপত্র (সবুজ = ডাটা আছে)</h3><div class="pgs" id="pgs"></div></div></div>
+<div class="modal" id="cal" onclick="if(event.target===this)this.classList.remove('on')"><div class="box"><h3>📅 ক্যালেন্ডার ২০২৬ – ২০২৮</h3><div id="calb"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const N=200,K='diary_v1',BN='০১২৩৪৫৬৭৮৯',DAYS=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+const MON=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+const bn=n=>String(n).replace(/\d/g,d=>BN[d]);
+let db={title:'',pages:{}},cur=1;
+const $=i=>document.getElementById(i);
+function load(){try{const r=localStorage.getItem(K);if(r)db=JSON.parse(r)}catch(e){}if(!db.pages)db.pages={}}
+function persist(){try{localStorage.setItem(K,JSON.stringify(db))}catch(e){toast('সেভ করা যায়নি')}}
+function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
+function fmt(s){if(!s)return['তারিখ','বার'];const d=new Date(s+'T00:00:00');return[bn(d.getDate())+' '+MON[d.getMonth()]+' '+bn(d.getFullYear()),DAYS[d.getDay()]]}
+function addPh(v){const d=document.createElement('div');d.className='ph';d.innerHTML='<input type="tel" inputmode="tel" placeholder="8801XXXXXXXXX"><button onclick="this.parentNode.remove()">×</button>';d.firstChild.value=v;$('phones').appendChild(d)}
+function calc(){const t=+$('tot').value||0,p=+$('paid').value||0;$('due').value=(t-p)}
+function show(n){cur=Math.min(N,Math.max(1,n));const p=db.pages[cur]||{};
+$('pg').textContent='পেজ নং: '+bn(cur)+' / '+bn(N);
+$('date').value=p.date||'';$('time').value=p.time||'';$('purpose').value=p.purpose||'';$('auth').value=p.auth||'';$('addr').value=p.addr||'';
+$('tot').value=p.tot||'';$('paid').value=p.paid||'';$('note').value=p.note||'';$('st').value=p.st||'';
+$('phones').innerHTML='';(p.phones&&p.phones.length?p.phones:['']).forEach(addPh);calc();hdr();scrollTo(0,0)}
+function hdr(){const f=fmt($('date').value);$('hd').textContent=f[0];$('wd').textContent=f[1]}
+$('date').addEventListener('input',hdr);
+function save(q){db.pages[cur]={date:$('date').value,time:$('time').value,purpose:$('purpose').value,auth:$('auth').value,addr:$('addr').value,tot:$('tot').value,paid:$('paid').value,note:$('note').value,st:$('st').value,phones:[...document.querySelectorAll('#phones input')].map(i=>i.value).filter(Boolean)};persist();if(q!==true)toast('✓ সেভ হয়েছে')}
+function go(d){show(cur+d)}
+function openIdx(){const g=$('pgs');g.innerHTML='';for(let i=1;i<=N;i++){const b=document.createElement('button');b.textContent=bn(i);if(db.pages[i])b.className='f';b.onclick=()=>{$('idx').classList.remove('on');show(i)};g.appendChild(b)}$('idx').classList.add('on')}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+const auto=()=>{clearTimeout(window._t);window._t=setTimeout(()=>save(true),700)};
+document.querySelector('main').addEventListener('input',auto);document.querySelector('main').addEventListener('click',e=>{if(e.target.closest('.ph button'))auto()});
+addEventListener('pagehide',()=>save(true));
+load();const n=new Date();$('today').textContent='আজ: '+bn(n.getDate())+' '+MON[n.getMonth()]+' '+bn(n.getFullYear())+' • '+DAYS[n.getDay()];show(1);
+let cy=2026,cm=0;
+function openCal(){const t=new Date().getFullYear();if(t>=2026&&t<=2028){cy=t;cm=new Date().getMonth()}calR();$('cal').classList.add('on')}
+function calR(){const f={};Object.keys(db.pages).forEach(k=>{if(db.pages[k].date)f[db.pages[k].date]=k});
+let h='<div class="yrs">'+[2026,2027,2028].map(y=>'<button class="'+(y==cy?'f':'')+'" onclick="cy='+y+';calR()">'+bn(y)+'</button>').join('')+'</div><div class="mh"><button onclick="cmv(-1)">‹</button><b>'+MON[cm]+' '+bn(cy)+'</b><button onclick="cmv(1)">›</button></div><div class="cg">'+['রবি','সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি'].map(d=>'<i>'+d+'</i>').join('');
+const s=new Date(cy,cm,1).getDay(),dm=new Date(cy,cm+1,0).getDate(),td=new Date();
+for(let i=0;i<s;i++)h+='<span></span>';
+for(let d=1;d<=dm;d++){const k=cy+'-'+String(cm+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');const c=(f[k]?'h ':'')+(td.getFullYear()==cy&&td.getMonth()==cm&&td.getDate()==d?'t':'');h+='<button class="'+c+'" onclick="pick(\''+k+'\')">'+bn(d)+'</button>'}
+$('calb').innerHTML=h+'</div><p class="note" style="margin-top:10px">সবুজ = ওই তারিখে ডাটা আছে। তারিখে ট্যাপ করলে সেই পেজ খুলবে, নতুন তারিখ হলে বর্তমান পেজে বসবে।</p>'}
+function cmv(x){cm+=x;if(cm<0){cm=11;cy--}if(cm>11){cm=0;cy++}if(cy<2026){cy=2026;cm=0}if(cy>2028){cy=2028;cm=11}calR()}
+function pick(k){const f=Object.keys(db.pages).find(i=>db.pages[i].date===k);$('cal').classList.remove('on');if(f){show(+f);return}$('date').value=k;hdr();auto();toast('তারিখ বসানো হয়েছে')}
+</script>
+</body>
+</html>
